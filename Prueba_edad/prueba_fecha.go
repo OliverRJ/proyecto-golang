@@ -1,9 +1,9 @@
 package main
 
 import (
-	"Practica_1/application/controllers"
 	"fmt"
 	"github.com/gofiber/fiber/v2"
+	"proyecto-golang/application/controllers"
 	"time"
 )
 
