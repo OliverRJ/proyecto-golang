@@ -8,7 +8,7 @@ import (
 
 func main() {
 	app := Setup()
-	app.Listen(":3000")
+	app.Listen(":5000")
 }
 
 func Setup() *fiber.App {
