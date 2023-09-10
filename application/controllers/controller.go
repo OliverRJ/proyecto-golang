@@ -17,24 +17,14 @@ func CalcularEdad(fechaNacimiento time.Time) int {
 	}
 	return edad
 }
-
-func CalcularEdadRelativa(fechaNacimiento time.Time) bool {
-	if fechaNacimiento.Month() >= 06 {
-		return true
-	}
-	return false
-}
-
-func CalcularEdadRelativaDos(fechaNacimiento time.Time) int {
+func CalcularEdadActorial(fechaNacimiento time.Time) int {
 	fechaActual := time.Now()
-	fechaParametro := fechaActual.AddDate(0, 6, 0)
 	birthdayActual := time.Date(fechaActual.Year(), fechaNacimiento.Month(), fechaNacimiento.Day(), 0, 0, 0, 0, time.UTC)
+	fechaParametro := birthdayActual.AddDate(0, 6, 0)
 	edad := fechaActual.Year() - fechaNacimiento.Year()
-	param := fechaParametro.After(birthdayActual)
+	param := fechaActual.After(fechaParametro)
 	if fechaNacimiento.YearDay() > fechaActual.YearDay() {
 		edad--
-	} else {
-		param = false
 	}
 	if param == true {
 		edad++

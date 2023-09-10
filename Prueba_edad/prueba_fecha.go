@@ -18,15 +18,10 @@ func main() {
 		}
 
 		edad := controllers.CalcularEdad(fechaNacimiento)
-		agregarEdad := controllers.CalcularEdadRelativa(fechaNacimiento)
-		edad2 := controllers.CalcularEdadRelativaDos(fechaNacimiento)
+		edad2 := controllers.CalcularEdadActorial(fechaNacimiento)
 
 		respuesta := fmt.Sprintf("Edad actual: %v años\n", edad)
-		if agregarEdad {
-			edad++
-		}
-		respuesta += fmt.Sprintf("Edad relativa: %v años\n", edad)
-		respuesta += fmt.Sprintf("Edad relativa 2: %v años", edad2)
+		respuesta += fmt.Sprintf("Edad actorial: %v años", edad2)
 
 		return c.SendString(respuesta)
 	})
