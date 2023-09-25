@@ -11,4 +11,7 @@ func Setup(app *fiber.App) {
 
 	pruebaGroup := api.Group("prueba")
 	pruebaGroup.Get("/calculo/:edad", controllers.Prueba)
+
+	module := api.Group("/modules")
+	module.Post("/", controllers.CreateModule)
 }
